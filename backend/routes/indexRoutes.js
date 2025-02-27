@@ -11,9 +11,19 @@ class IndexRoutes {
         this.config();
     }
 
+    // -> id -> localhost:3000/:id -> fetch o axios
     config(){
         // localhost:3000/
-        this.router.get('/',indexController.index);
+        this.router.get('/', indexController.list);
+        // localhost:3000/:id
+        // localhost:3000/usuarioRandom12358
+        this.router.get('/:id', indexController.getOne);
+        // localhost:3000/ <- Creates
+        this.router.post('/', indexController.create);
+        // localhost:3000/ <- Updates
+        this.router.put('/', indexController.create);
+        // localhost:3000/ <- Delete
+        this.router.put('/', indexController.create);
     }
 }
 
